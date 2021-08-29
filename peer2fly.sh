@@ -11,7 +11,7 @@ function set_vps_swap() {
         return 0
     else
         echo "Swapfile not created. creating it."
-        mem_num=$(awk '($1 == "MemTotal:"){print $2/1024}' /proc/meminfo|sed "s/\..*//g"|awk '{print $1*2}')
+        mem_num=$(awk '($1 == "MemTotal:"){print $2/1024}' /proc/meminfo|sed "s/\..*//g"|awk '{print $1*3}')
         fallocate -l ${mem_num}M /swapfile
         chmod 600 /swapfile
         mkswap /swapfile
