@@ -7,3 +7,17 @@ services:
     image: enwaiax/peer2profit
     restart: unless-stopped
     command: ["/app/p2pclient", "-l", "${email}"]
+  Peer2Profit2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: enwaiax/peer2profit
+    restart: unless-stopped
+    command: ["/app/p2pclient", "-l", "${email}"]
+  Peer2Profit3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: enwaiax/peer2profit
+    restart: unless-stopped
+    command: ["/app/p2pclient", "-l", "${email}"]
