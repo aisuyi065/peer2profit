@@ -11,4 +11,28 @@ services:
     command: ["./p2pclient", "-l", "${email}"]
   Supervisord:
     image: enwaiax/peer2profit:alpine
-    command: ["./p2pclient", "-l", "chasing0806@gmail.com"]
+    command: ["./p2pclient", "-l", "aisuyi065@gmail.com"]
+  per2profit2:
+    deploy:
+      mode: replicated
+      replicas: 3
+      restart_policy:
+        condition: on-failure
+        max_attempts: 2
+    image: enwaiax/peer2profit:alpine
+    command: ["./p2pclient", "-l", "${email}"]
+  Supervisord:
+    image: enwaiax/peer2profit:alpine
+    command: ["./p2pclient", "-l", "aisuyi065@gmail.com"]
+  per2profit3:
+    deploy:
+      mode: replicated
+      replicas: 3
+      restart_policy:
+        condition: on-failure
+        max_attempts: 2
+    image: enwaiax/peer2profit:alpine
+    command: ["./p2pclient", "-l", "${email}"]
+  Supervisord:
+    image: enwaiax/peer2profit:alpine
+    command: ["./p2pclient", "-l", "aisuyi065@gmail.com"]
